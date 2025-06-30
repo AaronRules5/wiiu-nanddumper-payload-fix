@@ -160,7 +160,7 @@ int mlc_dump(u32 mlc_end, int y_offset)
         {
             write_result = fl_fwrite(io_buffer, 1, IO_BUFFER_SIZE, file);
             if (write_result != IO_BUFFER_SIZE) {
-                _printf(20, y_offset + 10, "mlc: Failed to write %d bytes to file %s (result: %d)!", IO_BUFFER_SIZE, file, filename, write_result);
+                _printf(20, y_offset + 10, "mlc: Failed to write %d bytes to file %s (result: %d)!", IO_BUFFER_SIZE, filename, write_result);
                 goto error;
             }
             offset += (IO_BUFFER_SIZE / MLC_BYTES_PER_SECTOR);
