@@ -83,7 +83,7 @@ int slc_dump(void *deviceHandle, const char* device, const char* filename, int y
         //FS_SLEEP(10);
         writeResult = fl_fwrite(io_buffer_spare, 1, readSize * SLC_BYTES_PER_SECTOR, file);
         if (writeResult != readSize * SLC_BYTES_PER_SECTOR) {
-            _printf(20, y_offset + 10, "%s: Failed to write %d bytes to file %s (result: %d)!", device, readSize * SLC_BYTES_PER_SECTOR, file, filename, writeResult);
+            _printf(20, y_offset + 10, "%s: Failed to write %d bytes to file %s (result: %d)!", device, readSize * SLC_BYTES_PER_SECTOR, filename, writeResult);
             goto error;
         }
         offset += readSize;
